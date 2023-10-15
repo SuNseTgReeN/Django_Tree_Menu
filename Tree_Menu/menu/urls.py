@@ -6,5 +6,5 @@ app_name = 'menu'
 
 urlpatterns = [
     path('', MenuListView.as_view(), name='menu_list'),
-    path('<slug:slug>/', MenuDetailView.as_view(), name='menu_detail'),
+    path('<slug:parent_slug>/<slug:slug>/', MenuDetailView.as_view(), name='menu_detail'),
 ]

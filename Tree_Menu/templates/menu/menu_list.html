@@ -12,7 +12,7 @@ Menu
         <ul>
             {% for main_menu in main_menus %}
                 <li>
-                    <a href="{{ main_menu.get_absolute_url }}">{{ main_menu.name }}</a>
+                    <p>{{ main_menu.name }}</p>
                     <ul>
                         {% for child_menu in main_menu.menu_set.all %}
                             <li>
