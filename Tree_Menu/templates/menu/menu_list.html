@@ -1,0 +1,28 @@
+{% extends 'flatpages/default.html' %}
+
+{% load menu_tags %}
+
+{% block title_page %}
+Menu
+{% endblock title_page %}
+
+{% block content %}
+<div class="col-lg-6">
+    <div class="card mb-4">
+        <ul>
+            {% for main_menu in main_menus %}
+                <li>
+                    <a href="{{ main_menu.get_absolute_url }}">{{ main_menu.name }}</a>
+                    <ul>
+                        {% for child_menu in main_menu.menu_set.all %}
+                            <li>
+                                <a href="{{ child_menu.get_absolute_url }}">{{ child_menu.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}
