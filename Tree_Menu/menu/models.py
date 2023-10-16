@@ -13,6 +13,5 @@ class Menu(models.Model):
         else:
             return reverse('menu:menu_detail', kwargs={'slug': self.slug})
 
-
     def __str__(self):
         return self.name
