@@ -1,0 +1,10 @@
+<h2>{{ menu.name }}</h2>
+{% if menu.menu_set.all %}
+    <ul>
+        {% for child_menu in menu.menu_set.all %}
+            <li>
+                <a href="{{ child_menu.get_absolute_url }}">{{ child_menu.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
