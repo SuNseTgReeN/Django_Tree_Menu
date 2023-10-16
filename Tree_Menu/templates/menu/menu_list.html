@@ -10,17 +10,8 @@ Menu
 <div class="col-lg-6">
     <div class="card mb-4">
         <ul>
-            {% for main_menu in main_menus %}
-                <li>
-                    <p>{{ main_menu.name }}</p>
-                    <ul>
-                        {% for child_menu in main_menu.menu_set.all %}
-                            <li>
-                                <a href="{{ child_menu.get_absolute_url }}">{{ child_menu.name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
+            {% for menu in main_menus %}
+                {% render_menu menu %}
             {% endfor %}
         </ul>
     </div>
